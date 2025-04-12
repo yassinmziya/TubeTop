@@ -6,13 +6,16 @@ let win;
 let tray;
 let isWindowVisible = false;
 
+app.dock.hide();
+app.setActivationPolicy('accessory');
+
 app.whenReady().then(() => {
     createWindow();
     createTray();
 });
 
 // Ensure separate userData path
-const customUserDataPath = path.join(app.getPath('appData'), 'ytmusic-app');
+const customUserDataPath = path.join(app.getPath('appData'), 'tubetop-app');
 app.setPath('userData', customUserDataPath);
 
 function createWindow() {
